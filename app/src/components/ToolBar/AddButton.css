@@ -1,0 +1,12 @@
+.AddButton{
+    background-color: #1BA600;
+    color: black;
+    font-size: 15px;    
+    cursor: pointer;
+    border-radius:25%;
+    width:80px;
+    height:40px;
+    position:absolute;
+    right:15%;
+    top:1.5%;
+}

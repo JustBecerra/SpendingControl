@@ -1,5 +1,5 @@
 .background{
-  background-color: #2b6777;
+  background-color: #337c91;
   height:fit-content;
 }
 
@@ -14,9 +14,9 @@
 
 .addButton{
   border-radius: 25%;
-  width:60px;
-  height:30px;
+  width:80px;
+  height:40px;
   position:absolute;
-  right:10%;
-  top:3%;
+  right:15%;
+  top:1.5%;
 }
