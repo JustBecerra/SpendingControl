@@ -7,7 +7,12 @@ import Modal from 'react-modal';
 export default function AddButton(){
     const dispatch = useDispatch();
     const [modalIsOpen, setIsOpen] = React.useState(false);
-    
+    const [info,setInfo] = React.useState({
+      type:'',
+      amount:0,
+      day:'',
+    })
+
     function openModal() {
         setIsOpen(true);
     }
@@ -15,10 +20,39 @@ export default function AddButton(){
     function closeModal() {
         setIsOpen(false);
     }
+    
+    function handleChange(e){
+        setInfo({
+            ...info,
+            [e.target.name]: e.target.value
+        })
+    }
+    
+    function handleSelect(e){
+        setInfo({
+            ...info,
+            day:e.target.value
+        })
+    }
 
-    // function addAlert(){
-    //   dispatch(await AddExpense())
-    // }
+    async function handleSubmit(e){
+        e.preventDefault()
+        // if(!info.name || !info.amount || !info.day){
+        //   setErrors(validate({
+        //   ...info,
+        //   [e.target.name]: e.target.value
+        // }));
+        // }else{
+          dispatch(await AddExpense(info))
+          setInfo({
+            type: '',
+            amount: 0,
+            day:'',
+          })
+          alert('Expense added')
+        // }
+      }
+
 
     return(
         <div>
@@ -28,18 +62,19 @@ export default function AddButton(){
               onRequestClose={closeModal}
             >
               <button onClick={closeModal}>close</button>
-              <form>
-                  <input type='text' placeholder='name of expense'/>
-                  <input type='number' placeholder='amount'/>
-                  <select>
-                      <option>Monday</option>
-                      <option>Tuesday</option>
-                      <option>Wednesday</option>
-                      <option>Thursday</option>
-                      <option>Friday</option>
-                      <option>Saturday</option>
-                      <option>Sunday</option>
+              <form onSubmit={(e) => handleSubmit(e)}>
+                  <input type='text' name='type' onChange={e => handleChange(e)} placeholder='type of expense'/>
+                  <input type='number' name='amount' onChange={e => handleChange(e)} placeholder='amount'/>
+                  <select name='day' onChange={e => handleSelect(e)}>
+                      <option value={'Monday'}>Monday</option>
+                      <option value={'Tuesday'}>Tuesday</option>
+                      <option value={'Wednesday'}>Wednesday</option>
+                      <option value={'Thursday'}>Thursday</option>
+                      <option value={'Friday'}>Friday</option>
+                      <option value={'Saturday'}>Saturday</option>
+                      <option value={'Sunday'}>Sunday</option>
                   </select>
+                  <button type='submit'>Add Expense</button>
               </form>
             </Modal>
         </div>
