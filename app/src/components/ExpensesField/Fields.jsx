@@ -2,7 +2,8 @@ import { useSelector } from 'react-redux'
 import './Fields.css'
 
 export default function Fields(){
-    let expenses = useSelector(state => state.Expenses)
+    let expenses = []
+    expenses.push(useSelector(state => state.Expenses))
     console.log('expenses', expenses)
     return(
         <div className='bg'>
@@ -11,10 +12,18 @@ export default function Fields(){
                {ex.amount}
                {ex.day}
            </div>)} */}
-           {expenses.type + ' '}
-           {expenses.amount + ' '}
-           {expenses.cost + ' '}
-           {expenses.day}
+           <tr>
+               <th>type</th>
+               <th>amount</th>
+               <th>cost</th>
+               <th>day</th>
+           </tr>
+           {expenses.map(ex => <tr key={ex.type * Math.random()}>
+               <td>{ex.type ? ex.type + ' ' : ''}</td>
+               <td>{ex.amount ? ex.amount + ' ' : ''}</td>
+               <td>{ex.cost ? ex.cost + ' ' : ''}</td>
+               <td>{ex.day ? ex.day : ''}</td>
+            </tr>)}
         </div>
     )
 } 
