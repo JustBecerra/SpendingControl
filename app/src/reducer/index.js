@@ -5,11 +5,12 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_EXPENSE':
-            // console.log('en el reducer', typeof state.Expenses)
-            return{
-              Expenses:action.payload
-            }
+          // state.Expenses.push(action.payload)
+          return{
+            ...state,
+            Expenses:action.payload
+          }
         default:
-            return state;
+          return state;
     }
 }

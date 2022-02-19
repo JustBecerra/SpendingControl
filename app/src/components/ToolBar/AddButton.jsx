@@ -55,6 +55,7 @@ export default function AddButton(){
             <Modal
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
+              ariaHideApp={false}
             >
               <button onClick={closeModal}>close</button>
               <form onSubmit={(e) => handleSubmit(e)}>
