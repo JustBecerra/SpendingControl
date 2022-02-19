@@ -10,31 +10,25 @@ export default function AddButton(){
     const [info,setInfo] = React.useState({
       type:'',
       amount:0,
+      cost:0,
       day:'',
     })
 
     function openModal() {
-        setIsOpen(true);
+      setIsOpen(true);
     }
     
     function closeModal() {
-        setIsOpen(false);
+      setIsOpen(false);
     }
     
     function handleChange(e){
-        setInfo({
-            ...info,
-            [e.target.name]: e.target.value
-        })
+      setInfo({
+          ...info,
+          [e.target.name]: e.target.value
+      })
     }
     
-    function handleSelect(e){
-        setInfo({
-            ...info,
-            day:e.target.value
-        })
-    }
-
     async function handleSubmit(e){
         e.preventDefault()
         // if(!info.name || !info.amount || !info.day){
@@ -43,15 +37,16 @@ export default function AddButton(){
         //   [e.target.name]: e.target.value
         // }));
         // }else{
-          dispatch(await AddExpense(info))
-          setInfo({
-            type: '',
-            amount: 0,
-            day:'',
-          })
-          alert('Expense added')
+        dispatch(await AddExpense(info))
+        setInfo({
+          type: '',
+          amount: 0,
+          cost: 0,
+          day:'',
+        })
+        alert('Expense added')
         // }
-      }
+    }
 
 
     return(
@@ -65,14 +60,16 @@ export default function AddButton(){
               <form onSubmit={(e) => handleSubmit(e)}>
                   <input type='text' name='type' onChange={e => handleChange(e)} placeholder='type of expense'/>
                   <input type='number' name='amount' onChange={e => handleChange(e)} placeholder='amount'/>
-                  <select name='day' onChange={e => handleSelect(e)}>
-                      <option value={'Monday'}>Monday</option>
-                      <option value={'Tuesday'}>Tuesday</option>
-                      <option value={'Wednesday'}>Wednesday</option>
-                      <option value={'Thursday'}>Thursday</option>
-                      <option value={'Friday'}>Friday</option>
-                      <option value={'Saturday'}>Saturday</option>
-                      <option value={'Sunday'}>Sunday</option>
+                  <input type='cost' name='cost' onChange={e => handleChange(e)} placeholder='cost'/>
+                  <select name='day' onChange={e => handleChange(e)} value={info.day}>
+                    <option defaultValue='none' hidden>day</option>
+                    <option value='Monday'>Monday</option>
+                    <option value='Tuesday'>Tuesday</option>
+                    <option value='Wednesday'>Wednesday</option>
+                    <option value='Thursday'>Thursday</option>
+                    <option value='Friday'>Friday</option>
+                    <option value='Saturday'>Saturday</option>
+                    <option value='Sunday'>Sunday</option>
                   </select>
                   <button type='submit'>Add Expense</button>
               </form>
