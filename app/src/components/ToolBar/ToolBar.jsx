@@ -2,6 +2,7 @@ import './toolBar.css'
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import AddButton from './AddButton.jsx'
+import { SelectMonday, SelectTuesday, SelectWednesday, SelectThursday, SelectFriday, SelectSaturday, SelectSunday } from '../../actions/DaySelectors';
 
 
 export default function ToolBar(){
@@ -29,7 +30,43 @@ export default function ToolBar(){
         display: flex;
         justify-content:space-evenly;
     `
-    const types = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+    // let changeDay = (type) => {
+    //   try{
+    //     setActive(type)
+    //   }catch(err){
+    //     console.log(err.message)
+    //   }
+      
+    //   switch(active){
+    //     case 'Monday':
+    //       SelectMonday()
+    //       break
+    //     case 'Tuesday':
+    //       SelectTuesday()
+    //       break
+    //     case 'Wednesday':
+    //       SelectWednesday()
+    //       break
+    //     case 'Thursday':
+    //       SelectThursday()
+    //       break
+    //     case 'Friday':
+    //       SelectFriday()
+    //       break
+    //     case 'Saturday':
+    //       SelectSaturday()
+    //       break
+    //     case 'Sunday':
+    //       SelectSunday()
+    //       break
+    //     default:
+    //       SelectMonday()
+    //       break
+    //   }
+    // }
+
+    const types = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     const [active, setActive] = useState(types[0]);
     return(
         <div className='background'>
@@ -41,6 +78,7 @@ export default function ToolBar(){
                 key={type}
                 active={active === type}
                 onClick={() => setActive(type)}
+                // onClick={(type) => changeDay(type)}
                 >
                   {type}
                 </Button>

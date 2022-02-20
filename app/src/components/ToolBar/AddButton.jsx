@@ -45,7 +45,8 @@ export default function AddButton(){
           day:'',
         })
         alert('Expense added')
-        // }
+        closeModal()
+        //}
     }
 
 
