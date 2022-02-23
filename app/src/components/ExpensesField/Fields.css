@@ -1,31 +1,56 @@
 .bg{
     background-color: #c8d8e4;
     /* height:100%; */
-    /* width:100%; */
+    width:75%;
 }
 
 .infoTitle{
     display:flex;
     justify-content:space-evenly;
-    width:75%;
+    width:100%;
     border-bottom:2px solid black;
     /* border-right:2px solid black; */
     /* padding-left: 5%; */
 }
 
 .infoFeed{
-    border-right:2px solid black;
     /* border-left:3px solid black; */
+    font-size:17px;
     display:flex;
     justify-content:space-evenly;
-    width:75%;
+    width:100%;
+    margin-top:1%;
+}
+
+.budget{
+    margin-right:0;
+    width:60%;
+    position:relative;
+    top:50%;
+    left:25%;
 }
 
 .totalExps{
+    font-size:22px;
+    width:50%;
+    position:relative;
+    left:25%;
+    top:25%;
+}
+
+.budgetButton{
+    position:relative;
+    left:15%;
+}
+
+.sideTab{
+    background-color: #337c91;
     position:absolute;
     border:2px solid black;
+    top:19%;
     right:0%;
     width:25%;
+    height:70%;
 }
 
 .categoryTitle{

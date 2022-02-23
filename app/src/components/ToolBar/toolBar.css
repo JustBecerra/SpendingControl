@@ -1,10 +1,10 @@
 .background{
-  background-color: #337c91;
+  background-color: rgb(199, 199, 199);
   height:fit-content;
 }
 
 .headerT{
-  color:#f2f2f2;
+  color:black;
   font-size: 25px;
   position:relative;
   top:20%;

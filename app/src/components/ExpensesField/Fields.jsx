@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux'
 import './Fields.css'
 
 export default function Fields(){
-    let [budget,setbudget] = useState(0)
+    let [budget,setBudget] = useState(0)
+    let [budgetFlag,setBudgetFlag] = useState(false);
 
     let day = useSelector(state => state.Day)
     let expenses = useSelector(state => state.Expenses)
@@ -13,25 +14,36 @@ export default function Fields(){
     }
 
     let FilteredExps = expenses.filter(ex => ex.day === day)
+
     return(
         <div className='bg'>
            <tr className='infoTitle'>
-               <th className='categoryTitle'>type</th>
+               <th className='categoryTitle'>type of payment</th>
+               <th className='categoryTitle'>product/service</th>
                <th className='categoryTitle'>amount</th>
                <th className='categoryTitle'>cost</th>
            </tr>
            {Array.isArray(FilteredExps) && FilteredExps.length > 0 ? FilteredExps.map(ex => <tr className='infoFeed' key={ex.cost * Math.random()}>
                <td>{ex.type ? ex.type + ' ' : ''}</td>
+               <td>{ex.product ? ex.product + ' ' : ''}</td>
                <td>{ex.amount ? ex.amount + ' ' : ''}</td>
-               <td>{ex.cost ? ex.cost + ' ' : ''}</td>
+               <td>{ex.cost ? '$' + ex.cost + ' ' : ''}</td>
             </tr>) : ''}
-            <div className='totalExps'>
-                Total Expenses:
-                ${TotalExps}<br/>
-                <input type='text' placeholder='Enter your budget'></input>
-                
+            <div className='sideTab'>
+                <div className='totalExps'>
+                    Total Expenses:<br/>
+                    ${TotalExps}
+                </div>   
+                {budgetFlag === false ?
+                <div className='budget'>
+                    <input type='number' placeholder='Enter your budget' onChange={(e) => setBudget(e.target.value)} /><br/>
+                    <button className='budgetButton' type='button' onClick={() => setBudgetFlag(true)} >Update Budget</button>
+                </div>
+                : <div className='budget'>
+                    Budget: ${budget}<br/>
+                    <button onClick={() => setBudgetFlag(false)}>Change Budget</button>
+                  </div>}
             </div>
-                       
         </div>
     )
 } 

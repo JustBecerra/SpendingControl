@@ -9,6 +9,7 @@ export default function AddButton(){
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [info,setInfo] = React.useState({
       type:'',
+      product:'',
       amount:0,
       cost:0,
       day:'',
@@ -40,6 +41,7 @@ export default function AddButton(){
         dispatch(await AddExpense(info))
         setInfo({
           type: '',
+          product:'',
           amount: 0,
           cost: 0,
           day:'',
@@ -60,7 +62,8 @@ export default function AddButton(){
             >
               <button onClick={closeModal}>close</button>
               <form onSubmit={(e) => handleSubmit(e)}>
-                  <input type='text' name='type' onChange={e => handleChange(e)} placeholder='type of expense'/>
+                  <input type='text' name='type' onChange={e => handleChange(e)} placeholder='type of payment'/>
+                  <input type='text' name='product' onChange={e => handleChange(e)} placeholder='product/service'/>
                   <input type='number' name='amount' onChange={e => handleChange(e)} placeholder='amount'/>
                   <input type='number' name='cost' onChange={e => handleChange(e)} placeholder='cost'/>
                   <select name='day' onChange={e => handleChange(e)} value={info.day}>
