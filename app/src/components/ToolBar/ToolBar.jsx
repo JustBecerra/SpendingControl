@@ -50,13 +50,14 @@ export default function ToolBar(){
         <div className='background'>
             <header className='headerT'>Welcome to Spending Control</header>
             <AddButton />
-            <ButtonGroup>
+            <ButtonGroup className='selectorB'>
             {types.map(type => (
                 <Button
                 key={type}
                 active={active === type}
                 onClick={() => setActive(type)}
                 // onClick={() => changeDay(type)}
+                
                 >
                   {type}
                 </Button>

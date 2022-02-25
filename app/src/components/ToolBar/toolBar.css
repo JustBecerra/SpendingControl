@@ -1,15 +1,17 @@
 .background{
-  background-color: rgb(199, 199, 199);
+  background-color: #ffff;
   height:fit-content;
 }
 
 .headerT{
   color:black;
+  background-color: #f2f2f2;
   font-size: 25px;
   position:relative;
   top:20%;
   display:flex;
   justify-content: center;
+  padding-bottom: 2%;
 }
 
 .addButton{
@@ -19,4 +21,8 @@
   position:absolute;
   right:15%;
   top:1.5%;
+}
+
+.selectorB{
+  background-color: #2b6777;
 }
