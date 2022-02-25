@@ -56,8 +56,6 @@ export default function ToolBar(){
                 key={type}
                 active={active === type}
                 onClick={() => setActive(type)}
-                // onClick={() => changeDay(type)}
-                
                 >
                   {type}
                 </Button>

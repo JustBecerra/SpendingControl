@@ -54,7 +54,7 @@ export default function AddButton(){
 
     return(
         <div>
-            <button className='AddButton' onClick={openModal}>+Add</button>
+            <button className='AddButton' onClick={openModal}>Add</button>
             <Modal
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
