@@ -59,14 +59,15 @@ export default function AddButton(){
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
               ariaHideApp={false}
+              className='modalBG'
             >
-              <button onClick={closeModal}>close</button>
-              <form onSubmit={(e) => handleSubmit(e)}>
-                  <input type='text' name='type' onChange={e => handleChange(e)} placeholder='type of payment'/>
-                  <input type='text' name='product' onChange={e => handleChange(e)} placeholder='product/service'/>
-                  <input type='number' name='amount' onChange={e => handleChange(e)} placeholder='amount'/>
-                  <input type='number' name='cost' onChange={e => handleChange(e)} placeholder='cost'/>
-                  <select name='day' onChange={e => handleChange(e)} value={info.day}>
+              <button onClick={closeModal} className='closeButton'>close</button>
+              <form onSubmit={(e) => handleSubmit(e)} className='OverlayModal'>
+                  <input type='text' name='type' onChange={e => handleChange(e)} className='inputSt' placeholder='type of payment'/>
+                  <input type='text' name='product' onChange={e => handleChange(e)} className='inputSt' placeholder='product/service'/>
+                  <input type='number' name='amount' onChange={e => handleChange(e)} className='inputSt' placeholder='amount'/>
+                  <input type='number' name='cost' onChange={e => handleChange(e)} className='inputSt' placeholder='cost'/>
+                  <select name='day' onChange={e => handleChange(e)} value={info.day} className='selectSt'>
                     <option defaultValue='none' hidden>day</option>
                     <option value='Monday'>Monday</option>
                     <option value='Tuesday'>Tuesday</option>
