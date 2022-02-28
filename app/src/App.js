@@ -4,7 +4,7 @@ import Fields from './components/ExpensesField/Fields.jsx'
 
 function App() {
   return (
-    <div>
+    <div >
       <ToolBar/>
       <Fields/>
     </div>

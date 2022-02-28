@@ -53,11 +53,16 @@
 
 .closeButton{
     cursor:pointer;
-    width:60px;
+    width:40px;
     height:30px;
     position:absolute;
     right:0%;
     top:0%;
     border: 1px solid #797979;
     border-radius: 0px 0px 0px 40px;
+}
+
+.closeButton:hover{
+    width:50px;
+    height:40px;
 }

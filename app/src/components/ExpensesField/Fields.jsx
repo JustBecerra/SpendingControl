@@ -24,10 +24,10 @@ export default function Fields(){
                <th className='categoryTitle'>cost</th>
            </tr>
            {Array.isArray(FilteredExps) && FilteredExps.length > 0 ? FilteredExps.map(ex => <tr className='infoFeed' key={ex.cost * Math.random()}>
-               <td>{ex.type ? ex.type + ' ' : ''}</td>
-               <td>{ex.product ? ex.product + ' ' : ''}</td>
-               <td>{ex.amount ? ex.amount + ' ' : ''}</td>
-               <td>{ex.cost ? '$' + ex.cost + ' ' : ''}</td>
+               <td className='type'>{ex.type ? ex.type + ' ' : ''}</td>
+               <td className='product'>{ex.product ? ex.product + ' ' : ''}</td>
+               <td className='amount'>{ex.amount ? ex.amount + ' ' : ''}</td>
+               <td className='cost'>{ex.cost ? '$' + ex.cost + ' ' : ''}</td>
             </tr>) : ''}
             <div className='sideTab'>
                 <div className='totalExps'>
