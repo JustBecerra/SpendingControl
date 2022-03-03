@@ -1,18 +1,10 @@
-import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import SideTab from './SideTab.jsx'
 import './Fields.css'
 
 export default function Fields(){
-    let [budget,setBudget] = useState(0)
-    let [budgetFlag,setBudgetFlag] = useState(false);
-
     let day = useSelector(state => state.Day)
-    let expenses = useSelector(state => state.Expenses)
-    let TotalExps = 0;
-    for(let i=0; i < expenses.length;i++){
-        TotalExps += parseInt(expenses[i].cost);
-    }
-
+    let expenses = useSelector(state => state.Expenses)    
     let FilteredExps = expenses.filter(ex => ex.day === day)
 
     return(
@@ -35,21 +27,7 @@ export default function Fields(){
             </tr>) : ''}
           </tbody>  
         </table>
-            <div className='sideTab'>
-                <div className='totalExps'>
-                    Total Expenses:<br/>
-                    ${TotalExps}
-                </div>   
-                {budgetFlag === false ?
-                <div className='budget'>
-                    <input type='number' placeholder='Enter your budget' onChange={(e) => setBudget(e.target.value)} /><br/>
-                    <button className='budgetButton' type='button' onClick={() => setBudgetFlag(true)} >Update Budget</button>
-                </div>
-                : <div className='budget'>
-                    Budget: ${budget}<br/>
-                    <button onClick={() => setBudgetFlag(false)}>Change Budget</button>
-                  </div>}
-            </div>
+            <SideTab expenses={expenses}/>
         </div>
     )
 } 
