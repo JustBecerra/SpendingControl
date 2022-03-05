@@ -32,8 +32,9 @@
     font-size:22px;
     margin:0;
     color: #c8d8e4;
+    width:fit-content;
     position:relative;
-    left:23%;
+    left:20%;
     top:30%;
 }
 
@@ -50,6 +51,7 @@
     border-color: transparent;
     background-color: #c8d8e4;
     color: #2b6777;
+    margin-top:10%;
     position:relative;
     left:10%;
 }

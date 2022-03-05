@@ -1,7 +1,8 @@
 import './toolBar.css'
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import AddButton from './AddButton.jsx'
+import AddButton from './AddButton.jsx';
+import AboutButton from './AboutButton.jsx'
 import { SelectDay } from '../../actions/DaySelectors';
 import { useDispatch } from 'react-redux';
 
@@ -49,6 +50,7 @@ export default function ToolBar(){
     return(
         <div className='background'>
             <header className='headerT'>Welcome to Spending Control</header>
+            <AboutButton />
             <AddButton />
             <ButtonGroup className='selectorB'>
             {types.map(type => (

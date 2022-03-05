@@ -56,10 +56,10 @@ export default function AddButton(){
             >
               <button onClick={closeModal} className='closeButton'>X</button>
               <form onSubmit={(e) => handleSubmit(e)} className='OverlayModal'>
-                  <input type='text' required name='type' onChange={e => handleChange(e)} className='inputSt' placeholder='type of payment'/>
-                  <input type='text' required name='product' onChange={e => handleChange(e)} className='inputSt' placeholder='product/service'/>
-                  <input type='number' required name='amount' onChange={e => handleChange(e)} className='inputSt' placeholder='amount'/>
-                  <input type='number' required name='cost' onChange={e => handleChange(e)} className='inputSt' placeholder='cost'/>
+                  <input type='text' required name='type' onChange={e => handleChange(e)} className='inputModal' placeholder='type of payment'/>
+                  <input type='text' required name='product' onChange={e => handleChange(e)} className='inputModal' placeholder='product/service'/>
+                  <input type='number' required name='amount' onChange={e => handleChange(e)} className='inputModal' placeholder='amount'/>
+                  <input type='number' required name='cost' onChange={e => handleChange(e)} className='inputModal' placeholder='cost'/>
                   <select name='day' onChange={e => handleChange(e)} value={info.day} className='selectSt'>
                     <option hiddenValue='none' hidden>day</option>
                     <option value='Monday'>Monday</option>
@@ -70,7 +70,7 @@ export default function AddButton(){
                     <option value='Saturday'>Saturday</option>
                     <option value='Sunday'>Sunday</option>
                   </select>
-                  <button type='submit'>Add Expense</button>
+                  <button className='addExpense' type='submit'>Add Expense</button>
               </form>
             </Modal>
         </div>

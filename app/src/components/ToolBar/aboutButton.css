@@ -1,0 +1,31 @@
+.aboutCont{
+    display:flex;
+    flex-direction: row;
+    position:absolute;
+    top:1%;
+    left:10%;
+    width:fit-content;
+    /* width:200px; */
+    /* right:5%; */
+}
+
+.aboutButton{
+    cursor:pointer;
+    background-color: transparent;
+    border-color: transparent;
+    
+    font-size: 20px;
+    /* width:35%; */
+}
+
+.aboutButton:hover{
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.emoji{
+    /* margin-left: 2%; */
+    height:25px;
+    width:25px;
+    position:relative;
+    top:20%
+}
