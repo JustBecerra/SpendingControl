@@ -1,6 +1,8 @@
 .bg{
     background-color: #c8d8e4;
     /* height:100%; */
+    overflow-y:scroll;
+    height:490px;
     width:75%;
 }
 
@@ -20,7 +22,6 @@
     border-bottom:1px solid black;
     font-size:17px;
     display:flex;
-    /* justify-content:space-evenly; */
     margin-top:1%;
 }
 
@@ -31,6 +32,10 @@
     /* padding-right:4%; */
 }
 
+.scroll{
+    overflow-y:scroll;
+}
+
 .type{
     position:relative;
     /* border:1px solid black; */
@@ -38,22 +43,22 @@
 }
 
 .product{
-    position:absolute;
+    position:sticky;
     /* border:1px solid black; */
     /* width:fit-content; */
-    left:30%;
+    left:40%;
 }
 
 .amount{
-    position:absolute;
+    position:sticky;
     /* border:1px solid black; */
     /* width:fit-content; */
-    left:50%;
+    left:68%;
 }
 
 .cost{
-    position:absolute;
+    position:sticky;
     /* border:1px solid black; */
     /* width:fit-content; */
-    left:66%;
+    left:88%;
 }

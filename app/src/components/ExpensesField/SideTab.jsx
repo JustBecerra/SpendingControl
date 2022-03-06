@@ -37,7 +37,7 @@ export default function SideTab(props){
         <h2 className='totalExps'>
             Total Expenses:
              ${TotalExps}
-             {careful === true ? alert.show('budget is smaller than your expenses!') : ''}
+             {/* {careful === true ? alert.show('budget is smaller than your expenses!') : ''} */}
         </h2>   
         {budgetFlag === false ?
             <div className='budget'>
