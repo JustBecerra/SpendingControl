@@ -20,7 +20,7 @@ export default function ToolBar(){
     margin-top: 30px;
     margin-bottom: 10px;     
     cursor: pointer;
-      
+    border: transparent;
     ${({ active }) =>
       active &&
     `

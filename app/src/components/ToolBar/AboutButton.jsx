@@ -23,12 +23,12 @@ export default function AboutButton(){
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             ariaHideApp={false}
-            //   className='modalBG'
+            className='aboutModal'
         >
          <button onClick={closeModal} className='exitButton'>X</button>
-         <p>
-            I've seen a lot of people focused on how much money they make, but they forget about how much they spend,<br/>
-            so I created this app so people can manage their expenses better.
+         <p className='paragraph'>
+            I developed this tool after seeing a lot of people focused on how much money they make, but they forget about how much they spend,
+            I hope this helps people manage their expenses better and make them financially responsible.
          </p>
         </Modal>
         
