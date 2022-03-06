@@ -5,7 +5,7 @@
     top:21.9%;
     right:0%;
     width:25%;
-    height:77.6%;
+    height:77.4%;
 }
 
 .invalidSt{
@@ -46,6 +46,7 @@
 }
 
 .budgetButton{
+    cursor:pointer;
     border-radius: 15%;
     border-color: transparent;
     background-color: #c8d8e4;
@@ -56,6 +57,7 @@
 }
 
 .changeBudget{
+    cursor:pointer;
     border-radius: 15%;
     border-color: transparent;
     background-color: #c8d8e4;

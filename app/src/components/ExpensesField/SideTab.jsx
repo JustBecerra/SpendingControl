@@ -15,29 +15,29 @@ export default function SideTab(props){
   }
   
   let changeFlag = () => {
-    console.log(inputRef.current.value)
     if(inputRef.current.value === ''){
-      // setInvalid(true)
       alert.show('invalid value')
     }else{
       setBudgetFlag(true)
     }
   }
-
+  
   useEffect(() => {
     if(TotalExps > budget){
-      setCareful(true)
-    }else{
-      setCareful(false)
+      alert.show('you need to spend less!')
+      // setCareful(true)
     }
+    // else{
+    //   setCareful(false)
+    // }
   },[TotalExps])
 
   return(
     <div className='sideTab'>
         <h2 className='totalExps'>
             Total Expenses:
-             ${TotalExps}
-             {/* {careful === true ? alert.show('budget is smaller than your expenses!') : ''} */}
+            ${TotalExps}
+            {/* {careful === true ? alert.show('budget is smaller than your expenses!') : ''} */}
         </h2>   
         {budgetFlag === false ?
             <div className='budget'>

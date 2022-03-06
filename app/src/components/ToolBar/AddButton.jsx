@@ -61,7 +61,7 @@ export default function AddButton(){
                   <input type='number' required name='amount' onChange={e => handleChange(e)} className='inputModal' placeholder='amount'/>
                   <input type='number' required name='cost' onChange={e => handleChange(e)} className='inputModal' placeholder='cost'/>
                   <select name='day' onChange={e => handleChange(e)} value={info.day} className='selectSt'>
-                    <option hiddenValue='none' hidden>day</option>
+                    <option hiddenvalue='none' hidden>day</option>
                     <option value='Monday'>Monday</option>
                     <option value='Tuesday'>Tuesday</option>
                     <option value='Wednesday'>Wednesday</option>
